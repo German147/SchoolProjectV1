@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import proyecto.escuela.escalab.school.project.repository.RoleRepositoy;
@@ -29,6 +30,7 @@ public class SchoolApliUserServiceServiceImpl implements SchoolApliUserService, 
     @Autowired
     private final SchoolApliUserRepository schoolApliUserRepository;
     private final RoleRepositoy roleRepositoy;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -50,6 +52,7 @@ public class SchoolApliUserServiceServiceImpl implements SchoolApliUserService, 
     @Override
     public SchoolApliUser saveUser(SchoolApliUser schoolApliUser) {
         log.info("Saving new user {} to the database", schoolApliUser.getName());
+        schoolApliUser.setPassword(passwordEncoder.encode(schoolApliUser.getPassword()));
         return schoolApliUserRepository.save(schoolApliUser);
     }
 

@@ -8,7 +8,7 @@ import proyecto.escuela.escalab.school.project.service.ApoderadoService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/apoderado")
+@RequestMapping("/api/v1/apoderados")
 public class ApoderadoController {
 
     @Autowired

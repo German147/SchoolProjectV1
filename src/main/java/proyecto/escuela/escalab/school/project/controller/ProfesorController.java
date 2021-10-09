@@ -8,7 +8,7 @@ import proyecto.escuela.escalab.school.project.service.ProfesorService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/profesor")
+@RequestMapping("/api/v1/profesores")
 public class ProfesorController {
 
     @Autowired

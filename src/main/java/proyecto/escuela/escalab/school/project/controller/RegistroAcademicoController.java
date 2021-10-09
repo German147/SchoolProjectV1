@@ -9,7 +9,7 @@ import proyecto.escuela.escalab.school.project.service.RegistroAcademicoService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/registro_academico")
+@RequestMapping("/api/v1/registro_academico")
 public class RegistroAcademicoController {
 
         @Autowired
