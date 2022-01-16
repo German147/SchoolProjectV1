@@ -1,5 +1,5 @@
 
-# School App project for Study Security
+# School App project for Studying Security
 ###### Desktop application created with SpringBoot, and Postgresql relational database.
 <br/>
 
